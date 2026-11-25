@@ -1,0 +1,75 @@
+{
+  "expedientes": 2000,
+  "eventos": 17690,
+  "variantes": 9,
+  "pct_no_conformes": 35.0,
+  "log_fitness": 0.9451084311286572,
+  "exactitud_deteccion": 1.0,
+  "resumen": [
+    {
+      "tipo_desvio": "Conforme",
+      "expedientes": 1300,
+      "horas_mediana": 18.91,
+      "horas_p90": 30.84,
+      "pct": 65.0
+    },
+    {
+      "tipo_desvio": "Retroceso a asesor",
+      "expedientes": 245,
+      "horas_mediana": 64.29,
+      "horas_p90": 100.53,
+      "pct": 12.25
+    },
+    {
+      "tipo_desvio": "Reasignación entre analistas",
+      "expedientes": 157,
+      "horas_mediana": 39.84,
+      "horas_p90": 58.05,
+      "pct": 7.85
+    },
+    {
+      "tipo_desvio": "Aprobación sin comité",
+      "expedientes": 124,
+      "horas_mediana": 13.24,
+      "horas_p90": 23.03,
+      "pct": 6.2
+    },
+    {
+      "tipo_desvio": "Sin verificación de campo",
+      "expedientes": 102,
+      "horas_mediana": 11.43,
+      "horas_p90": 19.66,
+      "pct": 5.1
+    },
+    {
+      "tipo_desvio": "Desembolso antes de aprobar",
+      "expedientes": 72,
+      "horas_mediana": 20.25,
+      "horas_p90": 31.34,
+      "pct": 3.6
+    }
+  ],
+  "sla24": {
+    "conformes_dentro_24h_pct": 72.23076923076923,
+    "no_conformes_dentro_24h_pct": 38.857142857142854
+  },
+  "espera_media_h": {
+    "Decidir en comité de créditos": 7.82,
+    "Aprobar crédito": 5.87,
+    "Completar documentos": 5.59,
+    "Reasignar analista": 4.28,
+    "Verificar negocio en campo": 4.05,
+    "Devolver a asesor": 4.01,
+    "Evaluar expediente": 3.66,
+    "Desembolsar": 1.17,
+    "Consultar central de riesgos SBS": 0.4,
+    "Validar identidad RENIEC": 0.3
+  },
+  "top_analistas_retroceso": {
+    "analista_06": 0.533,
+    "analista_10": 0.408,
+    "analista_11": 0.404,
+    "analista_12": 0.386,
+    "analista_01": 0.351
+  }
+}

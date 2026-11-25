@@ -1,0 +1,5 @@
+fecha,encuestadora,tipo,fujimori_validos,sanchez_validos,publicable,fuente
+2026-05-30,Datum Internacional,simulacro,52.9,47.1,si,"Datum/El Comercio, encuesta 26-30 may 2026 (América TV, 31/05/2026)"
+2026-05-31,Ipsos Perú,simulacro,51.4,48.6,si,"Ipsos/Perú21, simulacro 31/05/2026 (Caretas; Perú21)"
+2026-06-03,Ipsos Perú,simulacro,49.6,50.4,no,"Ipsos, evolución de simulacros en informe del 06/06/2026"
+2026-06-06,Ipsos Perú,simulacro,50.2,49.8,no,"Ipsos, Simulacro 06 de junio - Confidencial"

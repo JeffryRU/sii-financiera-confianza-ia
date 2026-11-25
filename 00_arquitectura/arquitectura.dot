@@ -1,0 +1,43 @@
+// Arquitectura lógica de integración SII + IA – Financiera Confianza Perú
+// Renderizar: dot -Tpng arquitectura.dot -o ../figures/arquitectura_integracion.png
+digraph G {
+  rankdir=LR; splines=spline; nodesep=0.35; ranksep=0.55;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, fillcolor="#ffffff", color="#555555"];
+  edge [fontname="Helvetica", fontsize=8, color="#555555"];
+
+  subgraph cluster_canales { label="1. Canales"; style="rounded,filled"; fillcolor="#eef3f8"; fontname="Helvetica-Bold"; fontsize=11;
+    app [label="App móvil\n(solicitud digital)"]; wa [label="WhatsApp Business\n/ web 24/7"]; tablet [label="Tablet del asesor\nde campo"]; teams [label="Portal interno /\nTeams (personal)"];
+  }
+  subgraph cluster_mw { label="2. Middleware de integración"; style="rounded,filled"; fillcolor="#fff4e6"; fontname="Helvetica-Bold"; fontsize=11;
+    gw [label="API Gateway\n(OAuth2 / JWT, rate limit,\nAPI REST versionadas)", fillcolor="#ffe0b3"];
+    bus [label="Bus de eventos\n(Kafka): SolicitudCreada,\nEtapaCambiada, Desembolso…", fillcolor="#ffe0b3"];
+    cdc [label="CDC (Debezium)\nreplica cambios del core"];
+    mdm [label="MDM: cliente único\n(DNI como llave maestra)"];
+  }
+  subgraph cluster_sist { label="3. Sistemas transaccionales"; style="rounded,filled"; fillcolor="#eef7ee"; fontname="Helvetica-Bold"; fontsize=11;
+    core [label="Core financiero / ERP\n(créditos, cuotas, contabilidad)", fillcolor="#d7efd7"];
+    crm [label="CRM\n(clientes, campañas, cobranza)", fillcolor="#d7efd7"];
+    itsm [label="ITSM / mesa de ayuda\n(incidentes, SLA)", fillcolor="#d7efd7"];
+    ext [label="Servicios externos\nRENIEC · SBS · burós"];
+  }
+  subgraph cluster_ia { label="4. Motores de IA"; style="rounded,filled"; fillcolor="#f3eefa"; fontname="Helvetica-Bold"; fontsize=11;
+    ml [label="Servicio de scoring y\nfraude (ML + autoencoder)\n/score  /fraude", fillcolor="#e3d7f5"];
+    pm [label="Minería de procesos\n(PM4Py / Celonis)\nconformidad continua", fillcolor="#e3d7f5"];
+    nlp [label="Asistente virtual (PLN)\nintenciones + entidades\n+ orquestador", fillcolor="#e3d7f5"];
+    mlops [label="MLOps: registro de modelos,\nmonitoreo de drift,\nexplicabilidad"];
+  }
+  subgraph cluster_datos { label="5. Datos y gobierno"; style="rounded,filled"; fillcolor="#f2f2f2"; fontname="Helvetica-Bold"; fontsize=11;
+    lake [label="Lakehouse\n(bronce · plata · oro)"]; logs [label="Event logs\n(XES/OCEL)"];
+    cat [label="Catálogo, linaje y\ncalidad de datos (DAMA)"]; bi [label="Tableros de\nKPI y auditoría"];
+  }
+
+  app -> gw; wa -> gw; tablet -> gw; teams -> gw;
+  gw -> core [label="REST"]; gw -> crm; gw -> itsm; gw -> ext;
+  gw -> ml [label="/score en línea\n< 300 ms"]; gw -> nlp [label="/chat"];
+  nlp -> gw [label="consulta saldo,\ncrea ticket", style=dashed];
+  core -> cdc -> bus; crm -> bus; itsm -> bus;
+  bus -> lake; bus -> logs; bus -> ml [label="eventos"];
+  mdm -> core [dir=both, style=dashed]; mdm -> crm [dir=both, style=dashed];
+  logs -> pm; lake -> ml; ml -> mlops; mlops -> ml [style=dashed];
+  pm -> bi; lake -> bi; cat -> lake [style=dashed]; pm -> itsm [label="alerta de\ndesvío", style=dashed];
+}

@@ -1,0 +1,16 @@
+{
+  "modo": "demo_simulado",
+  "backend_sentimiento": "lexico",
+  "nowcast_final_fujimori_pct": 51.179543419473774,
+  "intervalo80": [
+    49.19315475316311,
+    53.257469282533485
+  ],
+  "prob_victoria_fujimori": 0.7724,
+  "resultado_onpe_fujimori_pct": 50.135,
+  "error_absoluto_pts": 1.0445434194737757,
+  "error_ultima_encuesta_pts": 0.06500000000000483,
+  "error_solo_redes_pts": 5.284055419055422,
+  "ganador_predicho": "Keiko Fujimori",
+  "ganador_real": "Keiko Fujimori"
+}

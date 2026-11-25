@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+resultados/*.joblib
+resultados/*.pt
+resultados/*.db

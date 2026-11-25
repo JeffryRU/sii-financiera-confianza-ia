@@ -1,0 +1,135 @@
+{
+  "clasificador": {
+    "accuracy": 0.7681159420289855,
+    "f1_macro": 0.6563492063492062,
+    "n_entrenamiento": 201,
+    "n_prueba": 69
+  },
+  "por_intencion": {
+    "agencias_horario": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "estado_cuenta": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1-score": 0.8571428571428571,
+      "support": 12.0
+    },
+    "estado_solicitud": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "estado_ticket": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "hablar_humano": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1-score": 0.5,
+      "support": 6.0
+    },
+    "proxima_cuota": {
+      "precision": 0.7272727272727273,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8,
+      "support": 9.0
+    },
+    "reportar_incidente": {
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1-score": 0.75,
+      "support": 12.0
+    },
+    "reprogramacion": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "saludo": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "accuracy": 0.7681159420289855,
+    "macro avg": {
+      "precision": 0.6363636363636364,
+      "recall": 0.6820987654320988,
+      "f1-score": 0.6563492063492062,
+      "support": 69.0
+    },
+    "weighted avg": {
+      "precision": 0.7035573122529645,
+      "recall": 0.7681159420289855,
+      "f1-score": 0.7316770186335403,
+      "support": 69.0
+    }
+  },
+  "demo": [
+    {
+      "usuario": "cliente",
+      "mensaje": "Hola",
+      "intencion": "saludo",
+      "confianza": 0.909,
+      "respuesta": "¡Hola! Soy Confi, el asistente de Financiera Confianza. Puedo darte tu saldo, tu próxima cuota, el estado de tu solicitud o registrar un incidente."
+    },
+    {
+      "usuario": "cliente",
+      "mensaje": "cuanto debo de mi prestamo?",
+      "intencion": "estado_cuenta",
+      "confianza": 0.948,
+      "respuesta": "Para proteger tus datos necesito tu DNI (8 dígitos). Te enviaremos un código de verificación por SMS."
+    },
+    {
+      "usuario": "cliente",
+      "mensaje": "mi dni es 40000001",
+      "intencion": "estado_cuenta",
+      "confianza": 0.238,
+      "respuesta": "Tu Crédito Emprendedor (CR-0001) tiene un saldo de capital de S/ 5,230.40. Estás al día."
+    },
+    {
+      "usuario": "cliente",
+      "mensaje": "cuando vence mi cuota",
+      "intencion": "proxima_cuota",
+      "confianza": 0.98,
+      "respuesta": "Tu próxima cuota (n.° 6) es de S/ 412.35 y vence el 2026-12-15."
+    },
+    {
+      "usuario": "cliente",
+      "mensaje": "ya aprobaron mi credito?",
+      "intencion": "estado_solicitud",
+      "confianza": 0.899,
+      "respuesta": "Tu solicitud SOL-7781 por S/ 15,000.00 está en la etapa «Verificación de campo» (actualizado 2026-11-24T09:51). Te avisaremos por este canal cuando cambie."
+    },
+    {
+      "usuario": "asesor_12",
+      "mensaje": "la tablet no sincroniza los expedientes",
+      "intencion": "reportar_incidente",
+      "confianza": 0.668,
+      "respuesta": "Registré el incidente INC-1044 (categoría: Aplicativo de campo, prioridad: Alta). Tiempo objetivo de atención: 4 h."
+    },
+    {
+      "usuario": "asesor_07",
+      "mensaje": "cómo va mi ticket INC-1042",
+      "intencion": "estado_ticket",
+      "confianza": 0.933,
+      "respuesta": "El ticket INC-1042 (Tablet no sincroniza expedientes) está «En atención», prioridad Alta."
+    },
+    {
+      "usuario": "cliente",
+      "mensaje": "quiero hablar con una persona",
+      "intencion": "hablar_humano",
+      "confianza": 0.901,
+      "respuesta": "Te comunico con un asesor humano. Tiempo estimado de espera: 3 minutos."
+    }
+  ]
+}

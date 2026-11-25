@@ -1,0 +1,53 @@
+{
+  "fraude": {
+    "Regresión logística": {
+      "roc_auc": 0.9711696958887969,
+      "pr_auc": 0.7908313556030921,
+      "recall_fpr1": 0.7619047619047619
+    },
+    "Random Forest": {
+      "roc_auc": 0.9873845463733104,
+      "pr_auc": 0.8938192170430223,
+      "recall_fpr1": 0.8888888888888888
+    },
+    "Gradient Boosting": {
+      "roc_auc": 0.9847944398506197,
+      "pr_auc": 0.8859353732662808,
+      "recall_fpr1": 0.8571428571428571
+    },
+    "Isolation Forest (no supervisado)": {
+      "roc_auc": 0.8927517551113057,
+      "pr_auc": 0.2479863353731888,
+      "recall_fpr1": 0.2619047619047619
+    },
+    "Regla estática actual": {
+      "recall": 0.4523809523809524,
+      "precision": 0.04394757131842714,
+      "tasa_alertas": 0.21616666666666667
+    }
+  },
+  "mejor_modelo_fraude": "Random Forest",
+  "scoring": {
+    "auc": 0.8159484122317209,
+    "gini": 0.6318968244634418,
+    "ejemplo_dinamico": {
+      "antes": 591.0,
+      "despues": 684.0
+    }
+  },
+  "decisiones": {
+    "fraude": {
+      "APROBAR": 13,
+      "RECHAZAR_Y_ALERTAR": 93,
+      "REVISION_MANUAL": 20
+    },
+    "legítima": {
+      "APROBAR": 5058,
+      "RECHAZAR_Y_ALERTAR": 6,
+      "REVISION_MANUAL": 810
+    }
+  },
+  "tasa_fraude": 0.02095,
+  "tasa_mora": 0.08985,
+  "n": 20000
+}
